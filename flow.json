@@ -1,15 +1,15 @@
 [
     {
-        "id": "8a8eaa3c.97c448",
+        "id": "185fd24d.e6aeae",
         "type": "tab",
         "label": "All Nodes",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "9b518e82.9e01",
+        "id": "86fda790.c33468",
         "type": "inject",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "topic": "",
         "payload": "0",
@@ -18,20 +18,20 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 210,
-        "y": 580,
+        "x": 145,
+        "y": 570,
         "wires": [
             [
-                "bfcfcb88.c782e8"
+                "9485e2f6.d2b56"
             ]
         ]
     },
     {
-        "id": "6e62aa0.5985258",
+        "id": "cef7e958.8a6258",
         "type": "ui_gauge",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
-        "group": "52670ed7.12c7a",
+        "group": "454d5f6c.f4cd9",
         "order": 3,
         "width": "11",
         "height": "11",
@@ -48,30 +48,30 @@
         ],
         "seg1": "400",
         "seg2": "600",
-        "x": 505,
-        "y": 285,
+        "x": 784,
+        "y": 304,
         "wires": []
     },
     {
-        "id": "c41682b3.7eba6",
+        "id": "654e9c5b.249ea4",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "check moisture",
         "func": "if(msg.payload.name)\n{\n    flow.set(\"plantConfig\",msg.payload);\n    return msg;\n}\nvar plant=flow.get(\"plantConfig\");\nif(msg.payload>=plant.watering.dry.min)\n    {\n        flow.set(\"water\",true);\n        msg.payload=1//\"The plant is DRY\";\n    }\nelse\n   {\n       flow.set(\"water\",false);\n        msg.payload=0;//=\"The plant is moist\";\n   }\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 485,
-        "y": 390,
+        "x": 460,
+        "y": 342,
         "wires": [
             [
-                "f9edd615.c20ae8"
+                "b8465f06.b7e3b"
             ]
         ]
     },
     {
-        "id": "1c161dbe.b19392",
+        "id": "2eaa590a.f84936",
         "type": "inject",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "topic": "plant configration",
         "payload": "{\"name\":\"Kalanhoe\",\"watering\":{\"dry\":{\"min\":600,\"max\":1000}}}",
@@ -80,18 +80,18 @@
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "x": 185,
-        "y": 390,
+        "x": 164,
+        "y": 380,
         "wires": [
             [
-                "c41682b3.7eba6"
+                "654e9c5b.249ea4"
             ]
         ]
     },
     {
-        "id": "ef264e6e.5e547",
+        "id": "15d40ebd.4c0811",
         "type": "inject",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "topic": "water",
         "payload": "",
@@ -100,19 +100,19 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 255,
-        "y": 705,
+        "x": 185,
+        "y": 646,
         "wires": [
             [
-                "6e1220f2.45558"
+                "dcb4a0e2.709ad"
             ]
         ]
     },
     {
-        "id": "f9edd615.c20ae8",
+        "id": "b8465f06.b7e3b",
         "type": "ui_text",
-        "z": "8a8eaa3c.97c448",
-        "group": "be584365.2cfa1",
+        "z": "185fd24d.e6aeae",
+        "group": "ef764282.79efe",
         "order": 7,
         "width": 0,
         "height": 0,
@@ -125,25 +125,25 @@
         "wires": []
     },
     {
-        "id": "6e1220f2.45558",
+        "id": "dcb4a0e2.709ad",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "start watering",
         "func": "var water=flow.get(\"water\");\n\nif(water===true)\n    {\n        msg.payload= 1;\n    }\nelse    \n    {\n        msg.payload= 0;\n        msg.payload=null;\n        return null;\n    }\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 465,
-        "y": 705,
+        "x": 422,
+        "y": 646,
         "wires": [
             [
-                "c89776bf.08fff8"
+                "abaa819f.04ede"
             ]
         ]
     },
     {
-        "id": "c89776bf.08fff8",
+        "id": "abaa819f.04ede",
         "type": "trigger",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "op1": "1",
         "op2": "0",
         "op1type": "num",
@@ -154,78 +154,25 @@
         "reset": "",
         "bytopic": "all",
         "name": "",
-        "x": 645,
-        "y": 705,
+        "x": 630,
+        "y": 646,
         "wires": [
             [
-                "4b1087cc.ca1b58",
-                "309cd8cb.e99478"
+                "f0601016.a263f",
+                "1fd618a1.e77cf7"
             ]
         ]
     },
     {
-        "id": "9d869c76.69abf",
-        "type": "arduino in",
-        "z": "8a8eaa3c.97c448",
-        "name": "red moisture",
-        "pin": "0",
-        "state": "ANALOG",
-        "arduino": "118e97fc.26aff8",
-        "x": 175,
-        "y": 300,
-        "wires": [
-            [
-                "6e62aa0.5985258",
-                "c41682b3.7eba6"
-            ]
-        ]
-    },
-    {
-        "id": "309cd8cb.e99478",
-        "type": "arduino out",
-        "z": "8a8eaa3c.97c448",
-        "name": "",
-        "pin": "9",
-        "state": "OUTPUT",
-        "arduino": "118e97fc.26aff8",
-        "x": 864,
-        "y": 814,
-        "wires": []
-    },
-    {
-        "id": "4b1087cc.ca1b58",
-        "type": "arduino out",
-        "z": "8a8eaa3c.97c448",
-        "name": "",
-        "pin": "10",
-        "state": "OUTPUT",
-        "arduino": "118e97fc.26aff8",
-        "x": 855,
-        "y": 738,
-        "wires": []
-    },
-    {
-        "id": "bfcfcb88.c782e8",
-        "type": "arduino out",
-        "z": "8a8eaa3c.97c448",
-        "name": "",
-        "pin": "8",
-        "state": "OUTPUT",
-        "arduino": "118e97fc.26aff8",
-        "x": 370,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "e9ec64c4.fe3148",
+        "id": "24656e81.dcf6f2",
         "type": "ui_form",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "label": "Add Plant Configuration",
-        "group": "7cfea643.732868",
+        "group": "a6e09b29.3b2948",
         "order": 1,
-        "width": 0,
-        "height": 0,
+        "width": "0",
+        "height": "0",
         "options": [
             {
                 "label": "Name",
@@ -262,20 +209,20 @@
         "submit": "submit",
         "cancel": "cancel",
         "topic": "",
-        "x": 145,
-        "y": 1410,
+        "x": 233,
+        "y": 1292,
         "wires": [
             [
-                "a7ceda1b.56ce08"
+                "c2cb0fc5.79d0f"
             ]
         ]
     },
     {
-        "id": "1304910e.92715f",
+        "id": "552d49cc.460e38",
         "type": "ui_button",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
-        "group": "be584365.2cfa1",
+        "group": "ef764282.79efe",
         "order": 6,
         "width": "0",
         "height": "0",
@@ -285,24 +232,27 @@
         "color": "",
         "bgcolor": "",
         "icon": "fa-tint",
-        "payload": "",
-        "payloadType": "str",
+        "payload": "0",
+        "payloadType": "num",
         "topic": "",
-        "x": 580,
-        "y": 585,
+        "x": 146,
+        "y": 779,
         "wires": [
-            []
+            [
+                "af6a64fc.34c498",
+                "9485e2f6.d2b56"
+            ]
         ]
     },
     {
-        "id": "9fdd00ca.cb33e",
+        "id": "921a3bc7.122e38",
         "type": "ui_dropdown",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "label": "Choose plant program",
         "tooltip": "",
         "place": "Select option",
-        "group": "70d34a08.27acc4",
+        "group": "b1163716.73b278",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -321,19 +271,19 @@
         ],
         "payload": "",
         "topic": "",
-        "x": 176,
-        "y": 1635,
+        "x": 252,
+        "y": 1672,
         "wires": [
             [
-                "3f3ff860.8c8298"
+                "bf5f90d7.1bc36"
             ]
         ]
     },
     {
-        "id": "98fe6628.b664d8",
+        "id": "181b03bf.40090c",
         "type": "ui_text",
-        "z": "8a8eaa3c.97c448",
-        "group": "be584365.2cfa1",
+        "z": "185fd24d.e6aeae",
+        "group": "ef764282.79efe",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -341,15 +291,15 @@
         "label": "Plant name:",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1210,
-        "y": 1590,
+        "x": 1248,
+        "y": 1767,
         "wires": []
     },
     {
-        "id": "91c4452e.3c7ca8",
+        "id": "decd74a9.b94628",
         "type": "ui_text",
-        "z": "8a8eaa3c.97c448",
-        "group": "be584365.2cfa1",
+        "z": "185fd24d.e6aeae",
+        "group": "ef764282.79efe",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -357,15 +307,15 @@
         "label": "Min water",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1201,
-        "y": 1649,
+        "x": 1239,
+        "y": 1826,
         "wires": []
     },
     {
-        "id": "f797d1fd.6454b",
+        "id": "2b0073dc.81ceac",
         "type": "ui_text",
-        "z": "8a8eaa3c.97c448",
-        "group": "be584365.2cfa1",
+        "z": "185fd24d.e6aeae",
+        "group": "ef764282.79efe",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -373,15 +323,15 @@
         "label": "Turn on lamp at",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1235,
-        "y": 1710,
+        "x": 1273,
+        "y": 1887,
         "wires": []
     },
     {
-        "id": "134f3aeb.25eb15",
+        "id": "ed97ba30.c7f798",
         "type": "ui_text",
-        "z": "8a8eaa3c.97c448",
-        "group": "be584365.2cfa1",
+        "z": "185fd24d.e6aeae",
+        "group": "ef764282.79efe",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -389,79 +339,47 @@
         "label": "Turn off lamp at",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1235,
-        "y": 1767,
+        "x": 1273,
+        "y": 1944,
         "wires": []
     },
     {
-        "id": "bda04ab3.340748",
-        "type": "ui_text",
-        "z": "8a8eaa3c.97c448",
-        "group": "be584365.2cfa1",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Current state of lamp is: ",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 1130,
-        "y": 2040,
-        "wires": []
-    },
-    {
-        "id": "f27320b9.459c5",
-        "type": "ui_text",
-        "z": "8a8eaa3c.97c448",
-        "group": "be584365.2cfa1",
-        "order": 9,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Current state of water pump is: ",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 1150,
-        "y": 2100,
-        "wires": []
-    },
-    {
-        "id": "6707d1cc.8e8cf",
+        "id": "1b470ec5.4d2591",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "push new plant to all",
         "func": "msg.payload.push(flow.get(\"new_plant\"));\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 805,
-        "y": 1410,
+        "x": 955,
+        "y": 1292,
         "wires": [
             [
-                "4f4b4a01.e0c464",
-                "aed31a3f.f1e7b8"
+                "bd2a4102.2eda4",
+                "dbe0e22e.1624b"
             ]
         ]
     },
     {
-        "id": "a7ceda1b.56ce08",
+        "id": "c2cb0fc5.79d0f",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "Set to flow new plant",
         "func": "flow.set(\"new_plant\",msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 385,
-        "y": 1410,
+        "x": 480,
+        "y": 1292,
         "wires": [
             [
-                "cdb610e1.4e939"
+                "ef6c96b8.277138"
             ]
         ]
     },
     {
-        "id": "2d7c93dc.3e73ec",
+        "id": "fd289ad.adf6268",
         "type": "inject",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "on start",
         "topic": "",
         "payload": "",
@@ -470,137 +388,136 @@
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "x": 150,
-        "y": 1230,
+        "x": 212,
+        "y": 1045,
         "wires": [
             [
-                "9c7f8c2d.fe81e",
-                "ff35b805.763638"
+                "85a4c2c9.85e3b",
+                "3d0e570c.12a008"
             ]
         ]
     },
     {
-        "id": "aed31a3f.f1e7b8",
+        "id": "dbe0e22e.1624b",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "Read plants config names",
         "func": "var configs=[];\nvar saved=[];\nsaved=flow.get(\"saved_programs\");\nsaved.forEach(function(plant){\n    configs.push(plant.plant_name);\n});\nmsg.options=configs;\nmsg.payload=flow.get(\"current_program\")\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 395,
-        "y": 1515,
+        "x": 243,
+        "y": 1615,
         "wires": [
             [
-                "9fdd00ca.cb33e"
+                "921a3bc7.122e38"
             ]
         ]
     },
     {
-        "id": "3f3ff860.8c8298",
+        "id": "bf5f90d7.1bc36",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "set flow current program",
         "func": "flow.set(\"current_program\",msg.payload)\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 425,
-        "y": 1635,
+        "x": 642,
+        "y": 1672,
         "wires": [
             [
-                "27ac3b7c.eae2e4",
-                "37762a0c.7dd496"
+                "3d0d1eb0.4df212",
+                "e4de0e3.adbb0f"
             ]
         ]
     },
     {
-        "id": "fc404fc9.aac1",
+        "id": "9e2083f5.a1667",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "get current program properties",
         "func": "var program=flow.get(\"current_program\");\nvar dbPlants=msg.payload;\nvar result= dbPlants.filter(progr=>progr.plant_name===program);\nmsg.payload=result[0];\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 730,
-        "y": 1665,
+        "x": 757,
+        "y": 1843,
         "wires": [
             [
-                "163bfbab.721f74",
-                "1d7605ee.fe135a",
-                "85e32b1d.d7bec8",
-                "5268f596.a8c51c"
+                "bd77ef38.54611",
+                "b35e3d20.5f229",
+                "3eeeb662.4fd7ca",
+                "7c9b1de2.db05c4",
+                "db9d37f7.3a52d8"
             ]
         ]
     },
     {
-        "id": "163bfbab.721f74",
+        "id": "bd77ef38.54611",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "get name",
         "func": "msg.payload=msg.payload.plant_name;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 991,
-        "y": 1590,
+        "x": 1029,
+        "y": 1767,
         "wires": [
             [
-                "98fe6628.b664d8"
+                "181b03bf.40090c"
             ]
         ]
     },
     {
-        "id": "1d7605ee.fe135a",
+        "id": "b35e3d20.5f229",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "get min water",
         "func": "msg.payload=msg.payload.min_water;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1011,
-        "y": 1647,
+        "x": 1049,
+        "y": 1824,
         "wires": [
             [
-                "91c4452e.3c7ca8"
+                "decd74a9.b94628"
             ]
         ]
     },
     {
-        "id": "85e32b1d.d7bec8",
+        "id": "3eeeb662.4fd7ca",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "get lamp on",
         "func": "msg.payload=msg.payload.lamp_on;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1001,
-        "y": 1704,
+        "x": 1039,
+        "y": 1881,
         "wires": [
             [
-                "f797d1fd.6454b",
-                "a3e8a531.ddaf48"
+                "2b0073dc.81ceac"
             ]
         ]
     },
     {
-        "id": "5268f596.a8c51c",
+        "id": "7c9b1de2.db05c4",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "get lamp ff",
         "func": "msg.payload=msg.payload.lamp_off;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1001,
-        "y": 1761,
+        "x": 1039,
+        "y": 1938,
         "wires": [
             [
-                "134f3aeb.25eb15",
-                "3399c7fe.23a768"
+                "ed97ba30.c7f798"
             ]
         ]
     },
     {
-        "id": "e469ba67.dfb4b8",
+        "id": "92c0f3a1.d8311",
         "type": "inject",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "topic": "",
         "payload": "",
@@ -609,18 +526,18 @@
         "crontab": "",
         "once": true,
         "onceDelay": "0.2",
-        "x": 265,
-        "y": 2565,
+        "x": 165,
+        "y": 2907,
         "wires": [
             [
-                "f4f9a9b7.bd36d8"
+                "f15e71b1.74e71"
             ]
         ]
     },
     {
-        "id": "19e6c960.b5d457",
+        "id": "80f7fcdd.d7d32",
         "type": "inject",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "on start",
         "topic": "",
         "payload": "",
@@ -629,61 +546,46 @@
         "crontab": "",
         "once": true,
         "onceDelay": "0.2",
-        "x": 120,
-        "y": 1485,
+        "x": 193,
+        "y": 1520,
         "wires": [
             [
-                "aed31a3f.f1e7b8"
+                "dbe0e22e.1624b"
             ]
         ]
     },
     {
-        "id": "ca589e59.4ce",
+        "id": "459cf4b0.1248dc",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "set flow current program",
         "func": "flow.set(\"current_program\",msg.payload);\n//msg.payload={msg.payload};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 650,
-        "y": 1275,
+        "x": 712,
+        "y": 1090,
         "wires": [
             []
         ]
     },
     {
-        "id": "653a70a1.495e8",
-        "type": "debug",
-        "z": "8a8eaa3c.97c448",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 1075,
-        "y": 2534,
-        "wires": []
-    },
-    {
-        "id": "2e5db303.4fb6ec",
+        "id": "7d9f986.f018268",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "set flow saved programs",
         "func": "flow.set(\"saved_programs\",msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 656,
-        "y": 1211,
+        "x": 718,
+        "y": 1026,
         "wires": [
             []
         ]
     },
     {
-        "id": "307a2e57.2105e2",
+        "id": "600a79cf.7aa068",
         "type": "inject",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "topic": "",
         "payload": "",
@@ -692,69 +594,54 @@
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "x": 265,
-        "y": 2451,
+        "x": 165,
+        "y": 2793,
         "wires": [
             [
-                "1f5a8835.408dc8"
+                "49e73e5d.1f348"
             ]
         ]
     },
     {
-        "id": "1f5a8835.408dc8",
+        "id": "49e73e5d.1f348",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "func": "msg.payload=\"ontime 23:09\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 416,
-        "y": 2451,
+        "x": 316,
+        "y": 2793,
         "wires": [
             [
-                "350f50fd.9c5e7"
+                "b725416e.94ec4"
             ]
         ]
     },
     {
-        "id": "f4f9a9b7.bd36d8",
+        "id": "f15e71b1.74e71",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "func": "msg.payload=\"offtime 23:10\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 445,
-        "y": 2564,
+        "x": 345,
+        "y": 2906,
         "wires": [
             [
-                "350f50fd.9c5e7"
+                "b725416e.94ec4"
             ]
         ]
     },
     {
-        "id": "a65aa59f.fd8198",
-        "type": "debug",
-        "z": "8a8eaa3c.97c448",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 995,
-        "y": 2235,
-        "wires": []
-    },
-    {
-        "id": "a3e8a531.ddaf48",
+        "id": "bf9e5003.15401",
         "type": "ui_text_input",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "label": "Turn on lamp at:",
         "tooltip": "08:00",
-        "group": "47218d14.0ea4a4",
+        "group": "51212c3.e7244d4",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -762,39 +649,39 @@
         "mode": "text",
         "delay": "1000",
         "topic": "",
-        "x": 251,
-        "y": 2112,
+        "x": 175,
+        "y": 2508,
         "wires": [
             [
-                "6edaa4d7.62726c",
-                "2a6ad450.ff15ac"
+                "9662a8cd.16bf78",
+                "ffe5c7a2.022df8"
             ]
         ]
     },
     {
-        "id": "6edaa4d7.62726c",
+        "id": "9662a8cd.16bf78",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "set sheduler time",
         "func": "\n msg.payload=\"ontime \"+msg.payload;\nreturn msg ;",
         "outputs": 1,
         "noerr": 0,
-        "x": 510,
-        "y": 2070,
+        "x": 434,
+        "y": 2466,
         "wires": [
             [
-                "9d72d6ee.059228"
+                "6707f3da.f2390c"
             ]
         ]
     },
     {
-        "id": "3399c7fe.23a768",
+        "id": "df48249.02e82d8",
         "type": "ui_text_input",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "label": "Turn off lamp at:",
         "tooltip": "08:00",
-        "group": "47218d14.0ea4a4",
+        "group": "51212c3.e7244d4",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -802,155 +689,151 @@
         "mode": "text",
         "delay": "1000",
         "topic": "",
-        "x": 251,
-        "y": 2188,
+        "x": 175,
+        "y": 2584,
         "wires": [
             [
-                "31e7d2da.1756de",
-                "dfa09f88.7b88f"
+                "23105b71.e96814",
+                "c2399a3d.d697b8"
             ]
         ]
     },
     {
-        "id": "31e7d2da.1756de",
+        "id": "23105b71.e96814",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "set sheduler time",
         "func": "msg.payload=\"offtime \"+msg.payload;\nreturn msg ;",
         "outputs": 1,
         "noerr": 0,
-        "x": 508,
-        "y": 2207,
+        "x": 432,
+        "y": 2603,
         "wires": [
             [
-                "9d72d6ee.059228"
+                "6707f3da.f2390c"
             ]
         ]
     },
     {
-        "id": "2a6ad450.ff15ac",
+        "id": "ffe5c7a2.022df8",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "set flow value",
         "func": "flow.set(\"lamp_ontime\",msg.payload);\n//msg.payload={\"lamp\":msg.payload};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 515,
-        "y": 2145,
+        "x": 439,
+        "y": 2541,
         "wires": [
-            [
-                "8106bf28.049f4"
-            ]
+            []
         ]
     },
     {
-        "id": "dfa09f88.7b88f",
+        "id": "c2399a3d.d697b8",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "set config valie",
         "func": "flow.set(\"lamp_offtime\",msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 517,
-        "y": 2302,
+        "x": 441,
+        "y": 2698,
         "wires": [
-            [
-                "8106bf28.049f4"
-            ]
+            []
         ]
     },
     {
-        "id": "4f4b4a01.e0c464",
+        "id": "bd2a4102.2eda4",
         "type": "DataIn",
-        "z": "8a8eaa3c.97c448",
-        "collection": "4faf0170.b836a",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
         "name": "save all plants",
         "update": true,
         "path": "/plants",
-        "x": 1032,
-        "y": 1410,
+        "x": 1220,
+        "y": 1292,
         "wires": []
     },
     {
-        "id": "37762a0c.7dd496",
+        "id": "e4de0e3.adbb0f",
         "type": "DataIn",
-        "z": "8a8eaa3c.97c448",
-        "collection": "4faf0170.b836a",
-        "name": "save current",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
+        "name": "Save current",
         "update": true,
         "path": "/currentProgram",
-        "x": 602,
-        "y": 1761,
+        "x": 507,
+        "y": 1786,
         "wires": []
     },
     {
-        "id": "cdb610e1.4e939",
+        "id": "ef6c96b8.277138",
         "type": "DataOut",
-        "z": "8a8eaa3c.97c448",
-        "collection": "4faf0170.b836a",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
         "name": "ReadPlants",
         "path": "/plants",
         "error": false,
-        "x": 604,
-        "y": 1410,
+        "x": 735,
+        "y": 1292,
         "wires": [
             [
-                "6707d1cc.8e8cf"
+                "1b470ec5.4d2591"
             ]
         ]
     },
     {
-        "id": "9c7f8c2d.fe81e",
+        "id": "85a4c2c9.85e3b",
         "type": "DataOut",
-        "z": "8a8eaa3c.97c448",
-        "collection": "4faf0170.b836a",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
         "name": "Read plants config",
         "path": "/plants",
         "error": false,
-        "x": 370,
-        "y": 1211,
+        "x": 432,
+        "y": 1026,
         "wires": [
             [
-                "2e5db303.4fb6ec"
+                "7d9f986.f018268"
             ]
         ]
     },
     {
-        "id": "27ac3b7c.eae2e4",
+        "id": "3d0d1eb0.4df212",
         "type": "DataOut",
-        "z": "8a8eaa3c.97c448",
-        "collection": "4faf0170.b836a",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
         "name": "Read plants config",
         "path": "/plants",
         "error": false,
-        "x": 630,
-        "y": 1575,
+        "x": 508,
+        "y": 1843,
         "wires": [
             [
-                "fc404fc9.aac1"
+                "9e2083f5.a1667"
             ]
         ]
     },
     {
-        "id": "ff35b805.763638",
+        "id": "3d0e570c.12a008",
         "type": "DataOut",
-        "z": "8a8eaa3c.97c448",
-        "collection": "4faf0170.b836a",
-        "name": "read current",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
+        "name": "Read current program",
         "path": "/currentProgram",
         "error": false,
-        "x": 350,
-        "y": 1268,
+        "x": 442,
+        "y": 1083,
         "wires": [
             [
-                "ca589e59.4ce"
+                "459cf4b0.1248dc"
             ]
         ]
     },
     {
-        "id": "350f50fd.9c5e7",
+        "id": "b725416e.94ec4",
         "type": "schedex",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "suspended": false,
         "lat": "42.7189",
@@ -972,18 +855,18 @@
         "fri": true,
         "sat": true,
         "sun": true,
-        "x": 646,
-        "y": 2489,
+        "x": 546,
+        "y": 2831,
         "wires": [
             [
-                "3c028026.9a15b"
+                "4c4cbb40.c8e674"
             ]
         ]
     },
     {
-        "id": "9d72d6ee.059228",
+        "id": "6707f3da.f2390c",
         "type": "schedex",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "suspended": false,
         "lat": "42.67868",
@@ -1005,18 +888,16 @@
         "fri": true,
         "sat": true,
         "sun": true,
-        "x": 812,
-        "y": 2112,
+        "x": 736,
+        "y": 2508,
         "wires": [
-            [
-                "a65aa59f.fd8198"
-            ]
+            []
         ]
     },
     {
-        "id": "5d1c4cb3.29dc04",
+        "id": "54fe3ab.d5223c4",
         "type": "inject",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "on start and every 24 hours",
         "topic": "",
         "payload": "",
@@ -1029,34 +910,15 @@
         "y": 105,
         "wires": [
             [
-                "4b5ed4c0.a0cc6c"
+                "d4fb4e67.7c9de"
             ]
         ]
     },
     {
-        "id": "4558e858.14ce38",
-        "type": "usbcamera",
-        "z": "8a8eaa3c.97c448",
-        "filemode": "1",
-        "filename": "",
-        "filedefpath": "1",
-        "filepath": "/home/pi/Pictures/",
-        "fileformat": "png",
-        "resolution": "3",
-        "name": "",
-        "x": 655,
-        "y": 135,
-        "wires": [
-            [
-                "e44164a3.fcb218"
-            ]
-        ]
-    },
-    {
-        "id": "f0e9afd1.69245",
+        "id": "5f807db1.759794",
         "type": "ui_template",
-        "z": "8a8eaa3c.97c448",
-        "group": "52670ed7.12c7a",
+        "z": "185fd24d.e6aeae",
+        "group": "454d5f6c.f4cd9",
         "name": "",
         "order": 1,
         "width": 0,
@@ -1065,59 +927,58 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 1080,
-        "y": 90,
+        "x": 1067,
+        "y": 152,
         "wires": [
             []
         ]
     },
     {
-        "id": "e44164a3.fcb218",
+        "id": "b8d38ccc.34c8e",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "get /filename",
-        "func": "var dir=msg.payload;\nif(dir.startsWith(\"/home\"))\n{\n    //var arr=dir.split('/');\n    //msg.payload=\"/\"+arr[arr.length-1];\n    //return msg;\n    msg.payload=\"/\"+msg.filename;\n    return msg;\n}\nelse \nreturn null;\n",
+        "func": "var dir=msg.payload;\nif(!dir)\n    {\n        return null;\n    }\nif(dir.startsWith(\"/home\"))\n{\n    //var arr=dir.split('/');\n    //msg.payload=\"/\"+arr[arr.length-1];\n    //return msg;\n    msg.payload=\"/\"+msg.filename;\n    return msg;\n}\nelse \nreturn null;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 850,
-        "y": 135,
+        "x": 849,
+        "y": 152,
         "wires": [
             [
-                "f0e9afd1.69245",
-                "65fea314.a2632c"
+                "5f807db1.759794"
             ]
         ]
     },
     {
-        "id": "4b5ed4c0.a0cc6c",
+        "id": "d4fb4e67.7c9de",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "create file name",
         "func": "var d = new Date();\nmsg.filename=\nd.getDate()+\"-\"+d.getMonth()+\"-\"+d.getFullYear()+\n\"_\"+d.getHours()+'-'+d.getMinutes()+\".jpg\";\n\nmsg.payload=\"\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 470,
-        "y": 135,
+        "x": 460,
+        "y": 152,
         "wires": [
             [
-                "4558e858.14ce38"
+                "82a551c2.583bd"
             ]
         ]
     },
     {
-        "id": "31d9f13e.5a537e",
+        "id": "21ac7c9b.e763a4",
         "type": "comment",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "make picture     ",
         "info": "",
-        "x": 210,
-        "y": 40,
+        "x": 108,
+        "y": 57,
         "wires": []
     },
     {
-        "id": "8a171210.d9fa6",
+        "id": "a76d94a4.ce4c58",
         "type": "comment",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "read moisture",
         "info": "",
         "x": 145,
@@ -1125,19 +986,19 @@
         "wires": []
     },
     {
-        "id": "a3ca0e7e.344a7",
+        "id": "cf78d093.a37ef",
         "type": "comment",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "display moisture",
         "info": "",
-        "x": 455,
-        "y": 240,
+        "x": 764,
+        "y": 247,
         "wires": []
     },
     {
-        "id": "f306885e.85c6e8",
+        "id": "73924c23.e2ac44",
         "type": "comment",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "water pump",
         "info": "",
         "x": 145,
@@ -1145,35 +1006,21 @@
         "wires": []
     },
     {
-        "id": "65fea314.a2632c",
-        "type": "debug",
-        "z": "8a8eaa3c.97c448",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 1060,
-        "y": 165,
-        "wires": []
-    },
-    {
-        "id": "725e0971.8f5a58",
+        "id": "dfbade7.7f1162",
         "type": "comment",
-        "z": "8a8eaa3c.97c448",
-        "name": "read configuration on start",
+        "z": "185fd24d.e6aeae",
+        "name": "on start read configuration and current program",
         "info": "",
-        "x": 215,
-        "y": 1125,
+        "x": 256,
+        "y": 969,
         "wires": []
     },
     {
-        "id": "5cbe8ae0.db1134",
+        "id": "87ff880e.cefbd8",
         "type": "ui_button",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
-        "group": "52670ed7.12c7a",
+        "group": "454d5f6c.f4cd9",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -1182,149 +1029,578 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
-        "icon": "camera-retro",
+        "icon": "fa-camera-retro",
         "payload": "",
         "payloadType": "date",
         "topic": "",
-        "x": 175,
-        "y": 150,
+        "x": 184,
+        "y": 152,
         "wires": [
             [
-                "4b5ed4c0.a0cc6c"
+                "d4fb4e67.7c9de"
             ]
         ]
     },
     {
-        "id": "6410b091.ff43f",
+        "id": "91085836.876998",
         "type": "comment",
-        "z": "8a8eaa3c.97c448",
-        "name": "create plant configuration",
+        "z": "185fd24d.e6aeae",
+        "name": "create new plant configuration",
         "info": "",
-        "x": 395,
-        "y": 1365,
+        "x": 196,
+        "y": 1235,
         "wires": []
     },
     {
-        "id": "c242b4f2.a928f8",
+        "id": "7d4e0cd7.f66154",
         "type": "comment",
-        "z": "8a8eaa3c.97c448",
-        "name": "add names to dropdown and set value",
+        "z": "185fd24d.e6aeae",
+        "name": "on start add names to dropdown and set value",
         "info": "",
-        "x": 255,
-        "y": 1575,
+        "x": 246,
+        "y": 1482,
         "wires": []
     },
     {
-        "id": "3c028026.9a15b",
+        "id": "4c4cbb40.c8e674",
         "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "z": "185fd24d.e6aeae",
         "name": "",
         "func": "if(msg.payload===\"on\")\n{\n    msg.payload=1;\n    return msg;\n}\nelse if(msg.payload===\"off\")\n{\n    msg.payload=0;\n    return msg\n}\nreturn null;",
         "outputs": 1,
         "noerr": 0,
-        "x": 900,
-        "y": 2535,
+        "x": 824,
+        "y": 2831,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82a551c2.583bd",
+        "type": "usbcamera",
+        "z": "185fd24d.e6aeae",
+        "filemode": "1",
+        "filename": "",
+        "filedefpath": "1",
+        "filepath": "/home/pi/Pictures/",
+        "fileformat": "png",
+        "resolution": "3",
+        "name": "",
+        "x": 659,
+        "y": 152,
         "wires": [
             [
-                "653a70a1.495e8"
+                "b8d38ccc.34c8e"
             ]
         ]
     },
     {
-        "id": "c42c7a01.b39438",
-        "type": "function",
-        "z": "8a8eaa3c.97c448",
+        "id": "e4ff1727.dd1cd8",
+        "type": "arduino in",
+        "z": "185fd24d.e6aeae",
+        "name": "red moisture",
+        "pin": "0",
+        "state": "ANALOG",
+        "arduino": "118e97fc.26aff8",
+        "x": 146,
+        "y": 304,
+        "wires": [
+            [
+                "cef7e958.8a6258",
+                "654e9c5b.249ea4"
+            ]
+        ]
+    },
+    {
+        "id": "1fd618a1.e77cf7",
+        "type": "arduino out",
+        "z": "185fd24d.e6aeae",
         "name": "",
-        "func": "var program=flow.get(\"current_program\");\nvar dbPlants=msg.payload;\nvar result= dbPlants.filter(progr=>progr.plant_name===program);\nvar currentProgram=result[0];\ncurrentProgram=flow.get(\"lamp_on\");\ncurrentProgram=flow.get(\"lamp_off\");\nmsg.payload=dbPlants;\nflow.set(\"new_plant\",currentProgram)\nreturn msg;",
+        "pin": "9",
+        "state": "OUTPUT",
+        "arduino": "118e97fc.26aff8",
+        "x": 810,
+        "y": 722,
+        "wires": []
+    },
+    {
+        "id": "f0601016.a263f",
+        "type": "arduino out",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "pin": "10",
+        "state": "OUTPUT",
+        "arduino": "118e97fc.26aff8",
+        "x": 820,
+        "y": 589,
+        "wires": []
+    },
+    {
+        "id": "9485e2f6.d2b56",
+        "type": "arduino out",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "pin": "8",
+        "state": "OUTPUT",
+        "arduino": "",
+        "x": 392,
+        "y": 570,
+        "wires": []
+    },
+    {
+        "id": "af6a64fc.34c498",
+        "type": "trigger",
+        "z": "185fd24d.e6aeae",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "num",
+        "op2type": "num",
+        "duration": "2",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "",
+        "x": 383,
+        "y": 779,
+        "wires": [
+            [
+                "f0601016.a263f",
+                "1fd618a1.e77cf7"
+            ]
+        ]
+    },
+    {
+        "id": "bea4391.37126c8",
+        "type": "comment",
+        "z": "185fd24d.e6aeae",
+        "name": "check if it works",
+        "info": "The payload from the button is 0 for pin 8.\nUse trigger for pins 9 and 10.",
+        "x": 156,
+        "y": 741,
+        "wires": []
+    },
+    {
+        "id": "f23d0c73.9738f",
+        "type": "comment",
+        "z": "185fd24d.e6aeae",
+        "name": "add the new plant to current dropdown",
+        "info": "",
+        "x": 834,
+        "y": 1406,
+        "wires": []
+    },
+    {
+        "id": "7d08e8cc.b4f858",
+        "type": "ui_text_input",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "label": "Name",
+        "tooltip": "",
+        "group": "d5720cfe.bd165",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 962,
+        "y": 2147,
+        "wires": [
+            [
+                "f8403b0a.830e08",
+                "181b03bf.40090c"
+            ]
+        ]
+    },
+    {
+        "id": "385d1ac3.dce376",
+        "type": "ui_numeric",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "label": "Min water",
+        "tooltip": "",
+        "group": "d5720cfe.bd165",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "topic": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "step": "50",
+        "x": 972,
+        "y": 2204,
+        "wires": [
+            [
+                "378c00f3.b3a77",
+                "decd74a9.b94628"
+            ]
+        ]
+    },
+    {
+        "id": "40750eba.ae541",
+        "type": "ui_text_input",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "label": "Lamp on",
+        "tooltip": "",
+        "group": "d5720cfe.bd165",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 972,
+        "y": 2261,
+        "wires": [
+            [
+                "cb5455d.a3800a8",
+                "2b0073dc.81ceac"
+            ]
+        ]
+    },
+    {
+        "id": "1e9b12ce.47da4d",
+        "type": "ui_text_input",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "label": "Lamp off",
+        "tooltip": "",
+        "group": "d5720cfe.bd165",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 972,
+        "y": 2318,
+        "wires": [
+            [
+                "e6bbfea4.b8a33",
+                "ed97ba30.c7f798"
+            ]
+        ]
+    },
+    {
+        "id": "f547ef9b.b234",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "get current program properties",
+        "func": "var program=flow.get(\"current_program\");\nvar dbPlants=msg.payload;\nvar result= dbPlants.filter((progr)=>{return progr.plant_name===program});\nmsg.payload=result[0];\nflow.set(\"current\",msg.payload)\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 890,
-        "y": 2310,
+        "x": 491,
+        "y": 2223,
         "wires": [
             [
-                "a65aa59f.fd8198"
+                "c59b76da.947f58",
+                "4248d8e5.e66b18",
+                "607bd3cf.f0003c",
+                "8f0c8d5a.f0225"
             ]
         ]
     },
     {
-        "id": "8106bf28.049f4",
+        "id": "c59b76da.947f58",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "get name",
+        "func": "msg.payload=msg.payload.plant_name;\nflow.set(\"plant_name\",msg.payload.plant_name);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 763,
+        "y": 2147,
+        "wires": [
+            [
+                "7d08e8cc.b4f858"
+            ]
+        ]
+    },
+    {
+        "id": "4248d8e5.e66b18",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "get min water",
+        "func": "msg.payload=msg.payload.min_water;\nflow.set(\"min_water\",msg.payload.min_water);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 783,
+        "y": 2204,
+        "wires": [
+            [
+                "385d1ac3.dce376"
+            ]
+        ]
+    },
+    {
+        "id": "607bd3cf.f0003c",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "get lamp on",
+        "func": "msg.payload=msg.payload.lamp_on;\nflow.set(\"lamp_on\",msg.payload.lamp_on);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 773,
+        "y": 2261,
+        "wires": [
+            [
+                "40750eba.ae541"
+            ]
+        ]
+    },
+    {
+        "id": "8f0c8d5a.f0225",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "get lamp ff",
+        "func": "msg.payload=msg.payload.lamp_off;\nflow.set(\"lamp_off\",msg.payload.lamp_off);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 773,
+        "y": 2318,
+        "wires": [
+            [
+                "1e9b12ce.47da4d"
+            ]
+        ]
+    },
+    {
+        "id": "db9d37f7.3a52d8",
         "type": "DataOut",
-        "z": "8a8eaa3c.97c448",
-        "collection": "4faf0170.b836a",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
         "name": "Read plants config",
         "path": "/plants",
         "error": false,
-        "x": 720,
-        "y": 2250,
+        "x": 223,
+        "y": 2204,
         "wires": [
             [
-                "c42c7a01.b39438"
+                "f547ef9b.b234"
             ]
         ]
     },
     {
-        "id": "52670ed7.12c7a",
+        "id": "f8403b0a.830e08",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "func": "var newCurrentName=msg.payload;\nflow.set(\"newPlantName\",newCurrentName);\nvar a = flow.get(\"current\")\na.plant_name=newCurrentName;\nflow.set(\"current\",a);\n//save to db\n//update plants configs\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1171,
+        "y": 2147,
+        "wires": [
+            [
+                "d2e90c1e.cfb39"
+            ]
+        ]
+    },
+    {
+        "id": "dd691423.52fcf8",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "get current program properties",
+        "func": "var program=flow.get(\"current_program\");\nvar dbPlants=msg.payload;\n\ndbPlants=dbPlants.filter((progr)=>{return progr.plant_name===program});\n\ndbPlants.push(flow.get(\"current\"));\n\nflow.set(\"current_program\",flow.get(\"newPlantName\"));\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1764,
+        "y": 2242,
+        "wires": [
+            [
+                "26a537a3.e15b58",
+                "c0d9bd32.f434"
+            ]
+        ]
+    },
+    {
+        "id": "d2e90c1e.cfb39",
+        "type": "DataOut",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
+        "name": "Read plants config",
+        "path": "/plants",
+        "error": false,
+        "x": 1496,
+        "y": 2242,
+        "wires": [
+            [
+                "dd691423.52fcf8"
+            ]
+        ]
+    },
+    {
+        "id": "26a537a3.e15b58",
+        "type": "DataIn",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
+        "name": "",
+        "update": false,
+        "path": "/plants",
+        "x": 2007,
+        "y": 2128,
+        "wires": []
+    },
+    {
+        "id": "b3452558.956928",
+        "type": "inject",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.4",
+        "x": 203,
+        "y": 2052,
+        "wires": [
+            [
+                "db9d37f7.3a52d8"
+            ]
+        ]
+    },
+    {
+        "id": "e33600f6.309cb",
+        "type": "DataIn",
+        "z": "185fd24d.e6aeae",
+        "collection": "aafe4b69.45f9a8",
+        "name": "",
+        "update": false,
+        "path": "/currentProgram",
+        "x": 2170,
+        "y": 2242,
+        "wires": []
+    },
+    {
+        "id": "c0d9bd32.f434",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "func": "msg.payload=flow.get(\"newPlantName\")\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2007,
+        "y": 2242,
+        "wires": [
+            [
+                "e33600f6.309cb"
+            ]
+        ]
+    },
+    {
+        "id": "378c00f3.b3a77",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "func": "\nflow.set(\"min_water\",msg.payload);\nvar a = flow.get(\"current\")\na.min_water=msg.payload;\nflow.set(\"current\",a);\n//save to db\n//update plants configs\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1171,
+        "y": 2204,
+        "wires": [
+            [
+                "d2e90c1e.cfb39"
+            ]
+        ]
+    },
+    {
+        "id": "cb5455d.a3800a8",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "func": "\nflow.set(\"lamp_on\",msg.payload);\nvar a = flow.get(\"current\")\na.lamp_on=msg.payload;\nflow.set(\"current\",a);\n//save to db\n//update plants configs\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1173,
+        "y": 2268,
+        "wires": [
+            [
+                "d2e90c1e.cfb39"
+            ]
+        ]
+    },
+    {
+        "id": "e6bbfea4.b8a33",
+        "type": "function",
+        "z": "185fd24d.e6aeae",
+        "name": "",
+        "func": "\nflow.set(\"lamp_off\",msg.payload);\nvar a = flow.get(\"current\")\na.lamp_off=msg.payload;\nflow.set(\"current\",a);\n//save to db\n//update plants configs\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1171,
+        "y": 2318,
+        "wires": [
+            [
+                "d2e90c1e.cfb39"
+            ]
+        ]
+    },
+    {
+        "id": "454d5f6c.f4cd9",
         "type": "ui_group",
         "z": "",
         "name": "Default",
-        "tab": "84affe3.5e4f7",
+        "tab": "e426d2a2.c017f",
         "order": 1,
         "disp": true,
         "width": "11",
         "collapse": false
     },
     {
-        "id": "be584365.2cfa1",
+        "id": "ef764282.79efe",
         "type": "ui_group",
         "z": "",
         "name": "Current configuration",
-        "tab": "84affe3.5e4f7",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "118e97fc.26aff8",
-        "type": "arduino-board",
-        "z": "",
-        "device": "/dev/ttyUSB0"
-    },
-    {
-        "id": "7cfea643.732868",
-        "type": "ui_group",
-        "z": "",
-        "name": "Add plant configuration",
-        "tab": "84affe3.5e4f7",
+        "tab": "e426d2a2.c017f",
         "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false
     },
     {
-        "id": "70d34a08.27acc4",
+        "id": "a6e09b29.3b2948",
+        "type": "ui_group",
+        "z": "",
+        "name": "Add new configuration",
+        "tab": "20269bd3.4dfdd4",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b1163716.73b278",
         "type": "ui_group",
         "z": "",
         "name": "Options",
-        "tab": "84affe3.5e4f7",
+        "tab": "e426d2a2.c017f",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "51212c3.e7244d4",
+        "type": "ui_group",
+        "z": "",
+        "name": "Lamp",
+        "tab": "e426d2a2.c017f",
         "order": 4,
         "disp": true,
         "width": "6",
         "collapse": false
     },
     {
-        "id": "47218d14.0ea4a4",
-        "type": "ui_group",
-        "z": "",
-        "name": "Lamp",
-        "tab": "84affe3.5e4f7",
-        "order": 5,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "4faf0170.b836a",
+        "id": "aafe4b69.45f9a8",
         "type": "json-db-collection",
         "z": "",
         "name": "PlantConfig",
@@ -1332,10 +1608,40 @@
         "save": true
     },
     {
-        "id": "84affe3.5e4f7",
+        "id": "d5720cfe.bd165",
+        "type": "ui_group",
+        "z": "",
+        "name": "Change current configuration",
+        "tab": "5cb09056.e62ce",
+        "order": 5,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "e426d2a2.c017f",
         "type": "ui_tab",
         "z": "",
         "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "20269bd3.4dfdd4",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Add new configuration",
+        "icon": "fa-plus",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5cb09056.e62ce",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Change current configuration",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
