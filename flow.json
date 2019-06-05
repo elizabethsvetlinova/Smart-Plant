@@ -1,15 +1,350 @@
 [
     {
-        "id": "61da1d7d.518484",
+        "id": "d78cd966.d70638",
         "type": "tab",
         "label": "All Nodes",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "d3e7138c.117f6",
+        "id": "d14733d8.59a7e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "true",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "a98c1d70.5efb8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Current configuration",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1df59aec.a8fc15",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a98c1d70.5efb8",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4c707921.683ad8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a98c1d70.5efb8",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e880bc8c.dd819",
+        "type": "ui_group",
+        "z": "",
+        "name": "Group 5",
+        "tab": "2fa685dd.fb56da",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "55922d89.a64294",
+        "type": "ui_group",
+        "z": "",
+        "name": "Add new program",
+        "tab": "449d652.465a29c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "859c76b.8db8188",
+        "type": "ui_group",
+        "z": "",
+        "name": "Current program",
+        "tab": "70418eb7.ed5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "d0861f1a.cb301",
+        "type": "ui_group",
+        "z": "",
+        "name": "Options",
+        "tab": "70418eb7.ed5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b49eeed8.ce16f",
+        "type": "json-db-collection",
+        "z": "",
+        "name": "PlantConfig",
+        "collection": "PlantConfig",
+        "save": true
+    },
+    {
+        "id": "e5ed2704.05dc98",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "2fa685dd.fb56da",
+        "order": 1,
+        "disp": true,
+        "width": "9",
+        "collapse": false
+    },
+    {
+        "id": "f90f2d51.0088e",
+        "type": "arduino-board",
+        "z": "",
+        "device": "/dev/ttyUSB0"
+    },
+    {
+        "id": "38610e49.cdb392",
+        "type": "ui_group",
+        "z": "",
+        "name": "Change current program",
+        "tab": "41d2f66c.735628",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "c2798c06.6d25b",
+        "type": "ui_group",
+        "z": "",
+        "name": "Delete program",
+        "tab": "dc3923db.784e9",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "34a17f3.a286e8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Group 4",
+        "tab": "2fa685dd.fb56da",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "2fa685dd.fb56da",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "fa-home",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "449d652.465a29c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Add new program",
+        "icon": "fa-plus",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "70418eb7.ed5",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Current program",
+        "icon": "fa-hand-o-right",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "41d2f66c.735628",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Change current program",
+        "icon": "fa-pencil",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dc3923db.784e9",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Remove program",
+        "icon": "fa-times",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "62fa3f22.16f14",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Restore",
+        "icon": "dashboard"
+    },
+    {
+        "id": "87664306.1716b",
+        "type": "ui_group",
+        "z": "",
+        "name": "Available programs",
+        "tab": "dc3923db.784e9",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f8bd894d.f08478",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "c2798c06.6d25b",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e3a4f9d5.226108",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "87664306.1716b",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "1e1b417e.00f6ff",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "87664306.1716b",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "eb0cde59.c1cc",
+        "type": "ui_group",
+        "z": "",
+        "name": "Available programs",
+        "tab": "449d652.465a29c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f8f9f4ca.2be578",
         "type": "inject",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "topic": "",
         "payload": "0",
@@ -18,23 +353,23 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 145,
-        "y": 570,
+        "x": 164,
+        "y": 817,
         "wires": [
             [
-                "e9be5e32.5c6a1"
+                "25cb5572.5a37ca"
             ]
         ]
     },
     {
-        "id": "728f06de.9e4098",
+        "id": "195b847c.1d26dc",
         "type": "ui_gauge",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
-        "group": "c3adc197.07776",
+        "group": "e880bc8c.dd819",
         "order": 1,
-        "width": "11",
-        "height": "11",
+        "width": "0",
+        "height": "0",
         "gtype": "gage",
         "title": "display moist in guage",
         "label": "units",
@@ -48,50 +383,30 @@
         ],
         "seg1": "400",
         "seg2": "600",
-        "x": 445,
-        "y": 300,
+        "x": 385,
+        "y": 304,
         "wires": []
     },
     {
-        "id": "ea56ce96.92c",
+        "id": "1bac87f5.016298",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "check moisture",
         "func": "if(msg.payload.name)\n{\n    flow.set(\"plantConfig\",msg.payload);\n    return msg;\n}\nvar plant=flow.get(\"current\");\nif(msg.payload>=plant.min_water)\n    {\n        flow.set(\"water\",true);\n        msg.payload=1//\"The plant is DRY\";\n    }\nelse\n   {\n       flow.set(\"water\",false);\n        msg.payload=0;//=\"The plant is moist\";\n   }\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 395,
-        "y": 375,
+        "x": 365,
+        "y": 437,
         "wires": [
             [
-                "3ccfa164.a7baae"
+                "5a1b3254.1b829c"
             ]
         ]
     },
     {
-        "id": "e6b176fc.eb3448",
+        "id": "f98b5bfb.5be0e8",
         "type": "inject",
-        "z": "61da1d7d.518484",
-        "name": "",
-        "topic": "plant configration",
-        "payload": "{\"name\":\"Kalanhoe\",\"watering\":{\"dry\":{\"min\":600,\"max\":1000}}}",
-        "payloadType": "json",
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "x": 164,
-        "y": 380,
-        "wires": [
-            [
-                "ea56ce96.92c"
-            ]
-        ]
-    },
-    {
-        "id": "ac43a141.9bfb2",
-        "type": "inject",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "topic": "water",
         "payload": "",
@@ -100,34 +415,34 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 185,
-        "y": 646,
+        "x": 183,
+        "y": 651,
         "wires": [
             [
-                "56e8e9d8.b0a1b8"
+                "ceae8851.82e2c8"
             ]
         ]
     },
     {
-        "id": "56e8e9d8.b0a1b8",
+        "id": "ceae8851.82e2c8",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "start watering",
         "func": "var water=flow.get(\"water\");\n\nif(water===true)\n    {\n        msg.payload= 1;\n    }\nelse    \n    {\n        msg.payload= 0;\n        msg.payload=null;\n        return null;\n    }\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 422,
-        "y": 646,
+        "x": 421,
+        "y": 651,
         "wires": [
             [
-                "54a8f62a.7d35f8"
+                "9973e55d.12e6b8"
             ]
         ]
     },
     {
-        "id": "54a8f62a.7d35f8",
+        "id": "9973e55d.12e6b8",
         "type": "trigger",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "op1": "1",
         "op2": "0",
         "op1type": "num",
@@ -138,22 +453,22 @@
         "reset": "",
         "bytopic": "all",
         "name": "",
-        "x": 630,
+        "x": 611,
         "y": 646,
         "wires": [
             [
-                "ddcce64.8810218",
-                "d32b8129.138e6"
+                "91b7bc3a.a3763",
+                "cbca67b.1ef4898"
             ]
         ]
     },
     {
-        "id": "8a4c5b10.8e3f48",
+        "id": "3df66ed5.1859b2",
         "type": "ui_form",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "label": "Add Plant Configuration",
-        "group": "ce607c77.3a086",
+        "group": "55922d89.a64294",
         "order": 1,
         "width": "0",
         "height": "0",
@@ -193,20 +508,20 @@
         "submit": "submit",
         "cancel": "cancel",
         "topic": "",
-        "x": 233,
-        "y": 1292,
+        "x": 214,
+        "y": 1311,
         "wires": [
             [
-                "7ea642bd.744e9c"
+                "7b5a3d01.25b054"
             ]
         ]
     },
     {
-        "id": "2809b9ee.b2ed46",
+        "id": "a542e003.e930a",
         "type": "ui_button",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
-        "group": "ec9c9342.c86e2",
+        "group": "859c76b.8db8188",
         "order": 6,
         "width": "0",
         "height": "0",
@@ -219,45 +534,44 @@
         "payload": "0",
         "payloadType": "num",
         "topic": "",
-        "x": 146,
-        "y": 779,
+        "x": 153,
+        "y": 755,
         "wires": [
             [
-                "50ed9d69.ce10c4",
-                "e9be5e32.5c6a1"
+                "7b6dd19e.a757f",
+                "25cb5572.5a37ca"
             ]
         ]
     },
     {
-        "id": "5d2ecfff.79c98",
+        "id": "bc196649.9f3068",
         "type": "ui_dropdown",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "label": "Choose plant program",
         "tooltip": "",
         "place": "Select option",
-        "group": "35557d8f.194112",
+        "group": "d0861f1a.cb301",
         "order": 1,
         "width": 0,
         "height": 0,
-        "passthru": false,
+        "passthru": true,
         "options": [],
         "payload": "",
         "topic": "",
-        "x": 252,
-        "y": 1672,
+        "x": 632,
+        "y": 1786,
         "wires": [
             [
-                "ec8bfa18.793b88",
-                "b4dfc630.27d8f8"
+                "caa0fd7d.3b73c"
             ]
         ]
     },
     {
-        "id": "ea93773f.7de3d8",
+        "id": "8eae0930.5c59b8",
         "type": "ui_text",
-        "z": "61da1d7d.518484",
-        "group": "ec9c9342.c86e2",
+        "z": "d78cd966.d70638",
+        "group": "859c76b.8db8188",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -265,15 +579,15 @@
         "label": "Plant name:",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1248,
-        "y": 1767,
+        "x": 1134,
+        "y": 1862,
         "wires": []
     },
     {
-        "id": "2a65c33c.85da6c",
+        "id": "fe261799.249ce8",
         "type": "ui_text",
-        "z": "61da1d7d.518484",
-        "group": "ec9c9342.c86e2",
+        "z": "d78cd966.d70638",
+        "group": "859c76b.8db8188",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -281,15 +595,15 @@
         "label": "Min water",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1239,
-        "y": 1826,
+        "x": 1125,
+        "y": 1921,
         "wires": []
     },
     {
-        "id": "b7deeaee.989e48",
+        "id": "f5e8f50a.cbbe88",
         "type": "ui_text",
-        "z": "61da1d7d.518484",
-        "group": "ec9c9342.c86e2",
+        "z": "d78cd966.d70638",
+        "group": "859c76b.8db8188",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -297,15 +611,15 @@
         "label": "Turn on lamp at",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1273,
-        "y": 1887,
+        "x": 1159,
+        "y": 1982,
         "wires": []
     },
     {
-        "id": "579ead94.f3f6b4",
+        "id": "e2c059d2.3abcd8",
         "type": "ui_text",
-        "z": "61da1d7d.518484",
-        "group": "ec9c9342.c86e2",
+        "z": "d78cd966.d70638",
+        "group": "859c76b.8db8188",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -313,48 +627,48 @@
         "label": "Turn off lamp at",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1273,
-        "y": 1944,
+        "x": 1159,
+        "y": 2039,
         "wires": []
     },
     {
-        "id": "7741852e.8c233c",
+        "id": "19ca9c1e.aaac34",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "push new plant to all",
         "func": "msg.payload.push(flow.get(\"new_plant\"));\nflow.set(\"saved_programs\",msg.payload)\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 955,
-        "y": 1292,
+        "y": 1311,
         "wires": [
             [
-                "52f383a5.72a65c",
-                "a073f53c.9df468",
-                "464eb43d.b7f45c"
+                "3bbf8512.5fe83a",
+                "aafbf958.45ad08",
+                "184e743d.002a1c"
             ]
         ]
     },
     {
-        "id": "7ea642bd.744e9c",
+        "id": "7b5a3d01.25b054",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "Set to flow new plant",
         "func": "flow.set(\"new_plant\",msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 480,
-        "y": 1292,
+        "y": 1311,
         "wires": [
             [
-                "fbcdfbe9.edeb28"
+                "a8d467fd.dee388"
             ]
         ]
     },
     {
-        "id": "40ca9c93.19f534",
+        "id": "facb7b30.bd0b78",
         "type": "inject",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "on start",
         "topic": "",
         "payload": "",
@@ -367,135 +681,134 @@
         "y": 1045,
         "wires": [
             [
-                "e2551288.c1dd",
-                "62c20807.735888"
+                "cce61013.6728e",
+                "1817f50c.42eb7b"
             ]
         ]
     },
     {
-        "id": "a073f53c.9df468",
+        "id": "8ee8b61f.6478f8",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "Read plants config names",
         "func": "var configs=[];\nvar saved=[];\nsaved=flow.get(\"saved_programs\");\nsaved.forEach(function(plant){\n    configs.push(plant.plant_name);\n});\nmsg.options=configs;\nmsg.payload=flow.get(\"current_program\")\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 245,
-        "y": 1590,
+        "x": 376,
+        "y": 1786,
         "wires": [
             [
-                "5d2ecfff.79c98",
-                "e67f02b1.d30cc"
+                "bc196649.9f3068"
             ]
         ]
     },
     {
-        "id": "ec8bfa18.793b88",
+        "id": "caa0fd7d.3b73c",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "set flow current program",
         "func": "flow.set(\"current_program\",msg.payload)\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 545,
-        "y": 1680,
+        "x": 889,
+        "y": 1786,
         "wires": [
             [
-                "83fc2735.458918",
-                "5dcaa351.a36c5c",
-                "1a79489.a6553b7"
+                "515c2a6b.8b8324",
+                "6da81203.aeed8c",
+                "5953f436.8611ec"
             ]
         ]
     },
     {
-        "id": "ca5e190d.8202b8",
+        "id": "d8f95139.89774",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get current program properties",
         "func": "var program=flow.get(\"current_program\");\nvar dbPlants=msg.payload;\nvar result= dbPlants.filter(progr=>progr.plant_name===program);\nmsg.payload=result[0];\nflow.set(\"current\",msg.payload);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 757,
-        "y": 1843,
+        "x": 643,
+        "y": 1938,
         "wires": [
             [
-                "ee3ab391.f04d",
-                "2685f806.9bfb28",
-                "4aa86304.e3f11c",
-                "47f42c58.6b0e74"
+                "691c6af7.2282e4",
+                "9cead05a.827c2",
+                "bb7f3a9d.587698",
+                "b2445f2b.f107b"
             ]
         ]
     },
     {
-        "id": "ee3ab391.f04d",
+        "id": "691c6af7.2282e4",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get name",
         "func": "msg.payload=msg.payload.plant_name;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1029,
-        "y": 1767,
+        "x": 915,
+        "y": 1862,
         "wires": [
             [
-                "ea93773f.7de3d8"
+                "8eae0930.5c59b8"
             ]
         ]
     },
     {
-        "id": "2685f806.9bfb28",
+        "id": "9cead05a.827c2",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get min water",
         "func": "msg.payload=msg.payload.min_water;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1049,
-        "y": 1824,
+        "x": 935,
+        "y": 1919,
         "wires": [
             [
-                "2a65c33c.85da6c"
+                "fe261799.249ce8"
             ]
         ]
     },
     {
-        "id": "4aa86304.e3f11c",
+        "id": "bb7f3a9d.587698",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get lamp on",
         "func": "msg.payload=msg.payload.lamp_on;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1039,
-        "y": 1881,
+        "x": 925,
+        "y": 1976,
         "wires": [
             [
-                "b7deeaee.989e48",
-                "30311ca.ce3fce4"
+                "f5e8f50a.cbbe88",
+                "e4ebe481.23b2e8"
             ]
         ]
     },
     {
-        "id": "47f42c58.6b0e74",
+        "id": "b2445f2b.f107b",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get lamp ff",
         "func": "msg.payload=msg.payload.lamp_off;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1039,
-        "y": 1938,
+        "x": 925,
+        "y": 2033,
         "wires": [
             [
-                "579ead94.f3f6b4",
-                "6280febd.db37e"
+                "e2c059d2.3abcd8",
+                "5799ebe0.5b20e4"
             ]
         ]
     },
     {
-        "id": "323679fa.0cf466",
+        "id": "f8c4f7e4.0668c8",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "set flow current program",
         "func": "flow.set(\"current_program\",msg.payload);\n//msg.payload={msg.payload};\nreturn msg;",
         "outputs": 1,
@@ -507,9 +820,9 @@
         ]
     },
     {
-        "id": "6fac51df.e3862",
+        "id": "5cab0e2c.fa5c2",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "set flow saved programs",
         "func": "flow.set(\"saved_programs\",msg.payload);\nreturn msg;",
         "outputs": 1,
@@ -521,82 +834,82 @@
         ]
     },
     {
-        "id": "30311ca.ce3fce4",
+        "id": "e4ebe481.23b2e8",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "set sheduler on time",
         "func": " msg.payload=\"ontime \"+msg.payload;\nflow.set(\"lamp_on\",msg.payload);\nreturn msg ;",
         "outputs": 1,
         "noerr": 0,
-        "x": 910,
-        "y": 2475,
+        "x": 1430,
+        "y": 2261,
         "wires": [
             [
-                "1cd557ec.4625c8"
+                "b86d36a7.9e62f8"
             ]
         ]
     },
     {
-        "id": "6280febd.db37e",
+        "id": "5799ebe0.5b20e4",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "set sheduler off time",
         "func": "msg.payload=\"offtime \"+msg.payload;\nflow.set(\"lamp_off\",msg.payload);\nreturn msg ;",
         "outputs": 1,
         "noerr": 0,
-        "x": 908,
-        "y": 2612,
+        "x": 1430,
+        "y": 2337,
         "wires": [
             [
-                "1cd557ec.4625c8"
+                "b86d36a7.9e62f8"
             ]
         ]
     },
     {
-        "id": "52f383a5.72a65c",
+        "id": "3bbf8512.5fe83a",
         "type": "DataIn",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "save all plants",
         "update": false,
         "path": "/plants",
-        "x": 1220,
-        "y": 1292,
+        "x": 1182,
+        "y": 1235,
         "wires": []
     },
     {
-        "id": "5dcaa351.a36c5c",
+        "id": "6da81203.aeed8c",
         "type": "DataIn",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "Save current",
         "update": true,
         "path": "/currentProgram",
-        "x": 910,
-        "y": 1635,
+        "x": 1172,
+        "y": 1748,
         "wires": []
     },
     {
-        "id": "fbcdfbe9.edeb28",
+        "id": "a8d467fd.dee388",
         "type": "DataOut",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "ReadPlants",
         "path": "/plants",
         "error": false,
         "x": 735,
-        "y": 1292,
+        "y": 1311,
         "wires": [
             [
-                "7741852e.8c233c"
+                "19ca9c1e.aaac34"
             ]
         ]
     },
     {
-        "id": "e2551288.c1dd",
+        "id": "cce61013.6728e",
         "type": "DataOut",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "Read plants config",
         "path": "/plants",
         "error": false,
@@ -604,31 +917,31 @@
         "y": 1026,
         "wires": [
             [
-                "6fac51df.e3862"
+                "5cab0e2c.fa5c2"
             ]
         ]
     },
     {
-        "id": "83fc2735.458918",
+        "id": "515c2a6b.8b8324",
         "type": "DataOut",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "Read plants config",
         "path": "/plants",
         "error": false,
-        "x": 765,
-        "y": 1755,
+        "x": 356,
+        "y": 1938,
         "wires": [
             [
-                "ca5e190d.8202b8"
+                "d8f95139.89774"
             ]
         ]
     },
     {
-        "id": "62c20807.735888",
+        "id": "1817f50c.42eb7b",
         "type": "DataOut",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "Read current program",
         "path": "/currentProgram",
         "error": false,
@@ -636,14 +949,14 @@
         "y": 1083,
         "wires": [
             [
-                "323679fa.0cf466"
+                "f8c4f7e4.0668c8"
             ]
         ]
     },
     {
-        "id": "8909107b.b4b65",
+        "id": "bdecdbe9.905378",
         "type": "inject",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "on start and every 24 hours",
         "topic": "",
         "payload": "",
@@ -656,15 +969,15 @@
         "y": 105,
         "wires": [
             [
-                "12f5fb5c.0b5cc5"
+                "edbec358.2d2ea"
             ]
         ]
     },
     {
-        "id": "2538b3ca.d91cfc",
+        "id": "d17d8ae9.3c7028",
         "type": "ui_template",
-        "z": "61da1d7d.518484",
-        "group": "af408a37.e5f5c8",
+        "z": "d78cd966.d70638",
+        "group": "e5ed2704.05dc98",
         "name": "",
         "order": 1,
         "width": 0,
@@ -680,25 +993,25 @@
         ]
     },
     {
-        "id": "9a423e6d.4d555",
+        "id": "90ce1ff9.2e22e",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get /filename",
-        "func": "var dir=msg.payload;\nif(!dir)\n    {\n        return null;\n    }\nif(dir.startsWith(\"/home\"))\n{\n    //var arr=dir.split('/');\n    //msg.payload=\"/\"+arr[arr.length-1];\n    //return msg;\n    msg.payload=\"/\"+msg.filename;\n    return msg;\n}\nelse \nreturn null;\n",
+        "func": "if(msg.payload===undefined){\n    return null;\n}\nvar dir=msg.payload;\n\nif( dir.startsWith(\"/home\"))\n{\n    msg.payload=\"/\"+msg.filename;\n    return msg;\n}\nelse \nreturn null;\n",
         "outputs": 1,
         "noerr": 0,
         "x": 849,
         "y": 152,
         "wires": [
             [
-                "2538b3ca.d91cfc"
+                "d17d8ae9.3c7028"
             ]
         ]
     },
     {
-        "id": "12f5fb5c.0b5cc5",
+        "id": "edbec358.2d2ea",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "create file name",
         "func": "var d = new Date();\nmsg.filename=\nd.getDate()+\"-\"+d.getMonth()+\"-\"+d.getFullYear()+\n\"_\"+d.getHours()+'-'+d.getMinutes()+\".jpg\";\n\nmsg.payload=\"\";\nreturn msg;",
         "outputs": 1,
@@ -707,66 +1020,66 @@
         "y": 152,
         "wires": [
             [
-                "a4dba84c.96d7c8"
+                "634bdaee.0fec54"
             ]
         ]
     },
     {
-        "id": "ccf2c688.bd9cf8",
+        "id": "36533c97.116a24",
         "type": "comment",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "make picture     ",
         "info": "",
-        "x": 108,
+        "x": 70,
         "y": 57,
         "wires": []
     },
     {
-        "id": "e5d49c77.c1c88",
+        "id": "a8c7d0e6.abbdd",
         "type": "comment",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "read moisture",
         "info": "",
-        "x": 145,
-        "y": 255,
-        "wires": []
-    },
-    {
-        "id": "d15441f1.12cb",
-        "type": "comment",
-        "z": "61da1d7d.518484",
-        "name": "display moisture",
-        "info": "",
-        "x": 764,
+        "x": 70,
         "y": 247,
         "wires": []
     },
     {
-        "id": "2407b221.eae3ee",
+        "id": "25f44177.9bd07e",
         "type": "comment",
-        "z": "61da1d7d.518484",
-        "name": "water pump",
+        "z": "d78cd966.d70638",
+        "name": "display moisture",
         "info": "",
-        "x": 145,
-        "y": 525,
+        "x": 707,
+        "y": 304,
         "wires": []
     },
     {
-        "id": "71d0d909.94d018",
+        "id": "40d77f9c.8879b",
         "type": "comment",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
+        "name": "water pump",
+        "info": "",
+        "x": 70,
+        "y": 608,
+        "wires": []
+    },
+    {
+        "id": "4311b24d.226a8c",
+        "type": "comment",
+        "z": "d78cd966.d70638",
         "name": "on start read configuration and current program",
         "info": "",
-        "x": 256,
+        "x": 180,
         "y": 969,
         "wires": []
     },
     {
-        "id": "41248a4.8600a74",
+        "id": "e947a5d5.198c38",
         "type": "ui_button",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
-        "group": "af408a37.e5f5c8",
+        "group": "e5ed2704.05dc98",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -783,34 +1096,34 @@
         "y": 152,
         "wires": [
             [
-                "12f5fb5c.0b5cc5"
+                "edbec358.2d2ea"
             ]
         ]
     },
     {
-        "id": "831ba9ee.2ee998",
+        "id": "5904c3e7.4bfe0c",
         "type": "comment",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "create new plant configuration",
         "info": "",
-        "x": 196,
-        "y": 1235,
+        "x": 120,
+        "y": 1254,
         "wires": []
     },
     {
-        "id": "c4a8e687.7ddfe8",
+        "id": "4cf68ffa.1e6d6",
         "type": "comment",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "on start add names to dropdown and set value",
         "info": "",
-        "x": 246,
-        "y": 1482,
+        "x": 170,
+        "y": 1634,
         "wires": []
     },
     {
-        "id": "a4dba84c.96d7c8",
+        "id": "634bdaee.0fec54",
         "type": "usbcamera",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "filemode": "1",
         "filename": "",
         "filedefpath": "1",
@@ -822,68 +1135,68 @@
         "y": 152,
         "wires": [
             [
-                "9a423e6d.4d555"
+                "90ce1ff9.2e22e"
             ]
         ]
     },
     {
-        "id": "e3835602.892f18",
+        "id": "8011caef.604418",
         "type": "arduino in",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "red moisture",
         "pin": "0",
         "state": "ANALOG",
-        "arduino": "118e97fc.26aff8",
-        "x": 146,
-        "y": 304,
+        "arduino": "f90f2d51.0088e",
+        "x": 127,
+        "y": 380,
         "wires": [
             [
-                "728f06de.9e4098",
-                "ea56ce96.92c",
-                "d279d4d2.8742b8"
+                "195b847c.1d26dc",
+                "1bac87f5.016298",
+                "b1dd191b.968298"
             ]
         ]
     },
     {
-        "id": "d32b8129.138e6",
+        "id": "cbca67b.1ef4898",
         "type": "arduino out",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "pin": "9",
         "state": "OUTPUT",
-        "arduino": "118e97fc.26aff8",
-        "x": 810,
-        "y": 722,
+        "arduino": "f90f2d51.0088e",
+        "x": 677,
+        "y": 817,
         "wires": []
     },
     {
-        "id": "ddcce64.8810218",
+        "id": "91b7bc3a.a3763",
         "type": "arduino out",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "pin": "10",
         "state": "OUTPUT",
-        "arduino": "118e97fc.26aff8",
-        "x": 820,
-        "y": 589,
+        "arduino": "f90f2d51.0088e",
+        "x": 677,
+        "y": 755,
         "wires": []
     },
     {
-        "id": "e9be5e32.5c6a1",
+        "id": "25cb5572.5a37ca",
         "type": "arduino out",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "pin": "8",
         "state": "OUTPUT",
-        "arduino": "118e97fc.26aff8",
-        "x": 392,
-        "y": 570,
+        "arduino": "f90f2d51.0088e",
+        "x": 412,
+        "y": 817,
         "wires": []
     },
     {
-        "id": "50ed9d69.ce10c4",
+        "id": "7b6dd19e.a757f",
         "type": "trigger",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "op1": "1",
         "op2": "0",
         "op1type": "num",
@@ -894,43 +1207,43 @@
         "reset": "",
         "bytopic": "all",
         "name": "",
-        "x": 383,
-        "y": 779,
+        "x": 391,
+        "y": 755,
         "wires": [
             [
-                "ddcce64.8810218",
-                "d32b8129.138e6"
+                "91b7bc3a.a3763",
+                "cbca67b.1ef4898"
             ]
         ]
     },
     {
-        "id": "cf183eec.c829d",
+        "id": "6aac1a68.aab774",
         "type": "comment",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "check if it works",
         "info": "The payload from the button is 0 for pin 8.\nUse trigger for pins 9 and 10.",
-        "x": 156,
-        "y": 741,
+        "x": 196,
+        "y": 728,
         "wires": []
     },
     {
-        "id": "dca6a686.c9eee8",
+        "id": "2a981077.890ee",
         "type": "comment",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "add the new plant to current dropdown",
         "info": "",
-        "x": 834,
+        "x": 929,
         "y": 1406,
         "wires": []
     },
     {
-        "id": "10f94e07.7ec5b2",
+        "id": "da96c935.6b2fa8",
         "type": "ui_text_input",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "label": "Name",
         "tooltip": "",
-        "group": "1eeedcbb.46d953",
+        "group": "38610e49.cdb392",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -938,23 +1251,23 @@
         "mode": "text",
         "delay": "0",
         "topic": "",
-        "x": 962,
-        "y": 2147,
+        "x": 924,
+        "y": 2527,
         "wires": [
             [
-                "4bb2f365.f0b31c",
-                "ea93773f.7de3d8"
+                "79fe5378.6ad50c",
+                "8eae0930.5c59b8"
             ]
         ]
     },
     {
-        "id": "a4bad8d2.25f218",
+        "id": "baf95496.34f268",
         "type": "ui_numeric",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "label": "Min water",
         "tooltip": "",
-        "group": "1eeedcbb.46d953",
+        "group": "38610e49.cdb392",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -964,23 +1277,23 @@
         "min": 0,
         "max": "1000",
         "step": "50",
-        "x": 972,
-        "y": 2204,
+        "x": 934,
+        "y": 2584,
         "wires": [
             [
-                "88c9e0b8.c8386",
-                "2a65c33c.85da6c"
+                "d75e2980.08a848",
+                "fe261799.249ce8"
             ]
         ]
     },
     {
-        "id": "584229d8.ab87d8",
+        "id": "a3daff87.c6c97",
         "type": "ui_text_input",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "label": "Lamp on",
         "tooltip": "",
-        "group": "1eeedcbb.46d953",
+        "group": "38610e49.cdb392",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -988,23 +1301,23 @@
         "mode": "text",
         "delay": "0",
         "topic": "",
-        "x": 972,
-        "y": 2261,
+        "x": 934,
+        "y": 2717,
         "wires": [
             [
-                "bf9ab269.7289c",
-                "b7deeaee.989e48"
+                "7fae0bbc.806a14",
+                "f5e8f50a.cbbe88"
             ]
         ]
     },
     {
-        "id": "1db661c3.8026de",
+        "id": "ac23f56a.548188",
         "type": "ui_text_input",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "label": "Lamp off",
         "tooltip": "",
-        "group": "1eeedcbb.46d953",
+        "group": "38610e49.cdb392",
         "order": 4,
         "width": 0,
         "height": 0,
@@ -1012,149 +1325,149 @@
         "mode": "text",
         "delay": "0",
         "topic": "",
-        "x": 972,
-        "y": 2318,
+        "x": 934,
+        "y": 2774,
         "wires": [
             [
-                "d0c859cf.6558d8",
-                "579ead94.f3f6b4"
+                "521a11f6.82b49",
+                "e2c059d2.3abcd8"
             ]
         ]
     },
     {
-        "id": "1a79489.a6553b7",
+        "id": "e7237dd1.cdbe5",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get current program properties",
         "func": "//var program=flow.get(\"current_program\");\n//var dbPlants=msg.payload;\n//var result= dbPlants.filter((progr)=>{return progr.plant_name===program});\n//msg.payload=result[0];\n//flow.set(\"current\",msg.payload)\nmsg.payload=flow.get(\"current\")\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 491,
-        "y": 2223,
+        "x": 415,
+        "y": 2622,
         "wires": [
             [
-                "c73149b6.7a3498",
-                "bcb24af4.8d3718",
-                "379a9a98.fbadc6",
-                "20c56b58.bb37d4"
+                "4735a019.22e49",
+                "da1db0f4.3c5c9",
+                "7107cbd8.ee2354",
+                "b30b9030.70718"
             ]
         ]
     },
     {
-        "id": "c73149b6.7a3498",
+        "id": "4735a019.22e49",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get name",
         "func": "msg.payload=msg.payload.plant_name;\nflow.set(\"plant_name\",msg.payload.plant_name);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 763,
-        "y": 2147,
+        "x": 725,
+        "y": 2527,
         "wires": [
             [
-                "10f94e07.7ec5b2"
+                "da96c935.6b2fa8"
             ]
         ]
     },
     {
-        "id": "bcb24af4.8d3718",
+        "id": "da1db0f4.3c5c9",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get min water",
         "func": "msg.payload=msg.payload.min_water;\nflow.set(\"min_water\",msg.payload.min_water);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 783,
-        "y": 2204,
+        "x": 745,
+        "y": 2584,
         "wires": [
             [
-                "a4bad8d2.25f218"
+                "baf95496.34f268"
             ]
         ]
     },
     {
-        "id": "379a9a98.fbadc6",
+        "id": "7107cbd8.ee2354",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get lamp on",
         "func": "msg.payload=msg.payload.lamp_on;\nflow.set(\"lamp_on\",msg.payload.lamp_on);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 773,
-        "y": 2261,
+        "x": 735,
+        "y": 2641,
         "wires": [
             [
-                "584229d8.ab87d8",
-                "30311ca.ce3fce4"
+                "a3daff87.c6c97",
+                "e4ebe481.23b2e8"
             ]
         ]
     },
     {
-        "id": "20c56b58.bb37d4",
+        "id": "b30b9030.70718",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "get lamp ff",
         "func": "msg.payload=msg.payload.lamp_off;\nflow.set(\"lamp_off\",msg.payload.lamp_off);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 670,
-        "y": 2355,
+        "x": 735,
+        "y": 2698,
         "wires": [
             [
-                "1db661c3.8026de",
-                "6280febd.db37e"
+                "ac23f56a.548188",
+                "5799ebe0.5b20e4"
             ]
         ]
     },
     {
-        "id": "4bb2f365.f0b31c",
+        "id": "79fe5378.6ad50c",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "var newCurrentName=msg.payload;\nflow.set(\"newPlantName\",newCurrentName);\nvar a = flow.get(\"current\")\na.plant_name=newCurrentName;\nflow.set(\"current\",a);\n//save to db\n//update plants configs\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1171,
-        "y": 2147,
+        "x": 1133,
+        "y": 2527,
         "wires": [
             [
-                "6a683df5.854c34"
+                "1d66f3b0.09441c"
             ]
         ]
     },
     {
-        "id": "6a683df5.854c34",
+        "id": "1d66f3b0.09441c",
         "type": "DataOut",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "Read plants config",
         "path": "/plants",
         "error": false,
-        "x": 1496,
-        "y": 2242,
+        "x": 1420,
+        "y": 2622,
         "wires": [
             [
-                "f64b328f.25caf",
-                "3ca054d.e5abaac"
+                "7157542c.2e361c",
+                "76f07e31.edd1a"
             ]
         ]
     },
     {
-        "id": "f64b328f.25caf",
+        "id": "7157542c.2e361c",
         "type": "DataIn",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "",
         "update": false,
         "path": "/plants",
-        "x": 1835,
-        "y": 2265,
+        "x": 1646,
+        "y": 2622,
         "wires": []
     },
     {
-        "id": "7295e3dd.faaf2c",
+        "id": "701c4838.eb9728",
         "type": "inject",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "topic": "",
         "payload": "",
@@ -1163,181 +1476,159 @@
         "crontab": "",
         "once": true,
         "onceDelay": "0.4",
-        "x": 235,
-        "y": 2280,
+        "x": 108,
+        "y": 2622,
         "wires": [
             [
-                "1a79489.a6553b7"
+                "e7237dd1.cdbe5"
             ]
         ]
     },
     {
-        "id": "d72b0ea8.140ff",
+        "id": "1e5e603f.0c9ac",
         "type": "DataIn",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "",
         "update": false,
         "path": "/currentProgram",
-        "x": 1998,
-        "y": 2360,
+        "x": 1866,
+        "y": 2546,
         "wires": []
     },
     {
-        "id": "3ca054d.e5abaac",
+        "id": "76f07e31.edd1a",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "flow.set(\"saved_programs\",msg.payload);\nif(flow.get(\"newPlantName\")){\nmsg.payload=flow.get(\"newPlantName\");\n\nflow.set(\"current_program\",flow.get(\"newPlantName\"));    \n\nreturn msg;\n    \n}else{\n    return null;\n}\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 1325,
-        "y": 2085,
+        "x": 1646,
+        "y": 2546,
         "wires": [
             [
-                "d72b0ea8.140ff",
-                "85949307.b4271"
+                "1e5e603f.0c9ac",
+                "aafbf958.45ad08"
             ]
         ]
     },
     {
-        "id": "88c9e0b8.c8386",
+        "id": "d75e2980.08a848",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "\nflow.set(\"min_water\",msg.payload);\nvar a = flow.get(\"current\")\na.min_water=msg.payload;\nflow.set(\"current\",a);\n//save to db\n//update plants configs\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1171,
-        "y": 2204,
+        "x": 1133,
+        "y": 2584,
         "wires": [
             [
-                "6a683df5.854c34"
+                "1d66f3b0.09441c"
             ]
         ]
     },
     {
-        "id": "bf9ab269.7289c",
+        "id": "7fae0bbc.806a14",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "\nflow.set(\"lamp_on\",msg.payload);\nvar a = flow.get(\"current\")\na.lamp_on=msg.payload;\nflow.set(\"current\",a);\n//save to db\n//update plants configs\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1173,
-        "y": 2268,
+        "x": 1133,
+        "y": 2717,
         "wires": [
             [
-                "6a683df5.854c34",
-                "30311ca.ce3fce4"
+                "1d66f3b0.09441c",
+                "e4ebe481.23b2e8"
             ]
         ]
     },
     {
-        "id": "d0c859cf.6558d8",
+        "id": "521a11f6.82b49",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "\nflow.set(\"lamp_off\",msg.payload);\nvar a = flow.get(\"current\")\na.lamp_off=msg.payload;\nflow.set(\"current\",a);\n//save to db\n//update plants configs\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1171,
-        "y": 2318,
+        "x": 1133,
+        "y": 2774,
         "wires": [
             [
-                "6a683df5.854c34",
-                "6280febd.db37e"
+                "1d66f3b0.09441c",
+                "5799ebe0.5b20e4"
             ]
         ]
     },
     {
-        "id": "4743f511.f230ac",
-        "type": "ui_text_input",
-        "z": "61da1d7d.518484",
-        "name": "",
-        "label": "Remove program",
-        "tooltip": "",
-        "group": "f6eb4df1.0d706",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "mode": "text",
-        "delay": "0",
-        "topic": "",
-        "x": 180,
-        "y": 2790,
-        "wires": [
-            [
-                "c5850abf.667f28"
-            ]
-        ]
-    },
-    {
-        "id": "c5850abf.667f28",
+        "id": "a6db3ba0.0d5a58",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
-        "func": "flow.set(\"remove\",msg.payload);\nreturn msg;",
+        "func": "flow.set(\"remove\",msg.payload.name);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 395,
-        "y": 2790,
+        "x": 362,
+        "y": 1520,
         "wires": [
             [
-                "374795e0.92e60a"
+                "c4b29ab3.2124f8"
             ]
         ]
     },
     {
-        "id": "374795e0.92e60a",
+        "id": "c4b29ab3.2124f8",
         "type": "DataOut",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "",
         "path": "/plants",
         "error": false,
-        "x": 575,
-        "y": 2790,
+        "x": 542,
+        "y": 1520,
         "wires": [
             [
-                "3169f5ff.3dc91a"
+                "4bc3f854.090cf8"
             ]
         ]
     },
     {
-        "id": "3169f5ff.3dc91a",
+        "id": "4bc3f854.090cf8",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "var result=msg.payload;\nvar remove=flow.get(\"remove\");\nresult=result.filter(function(progr){\n    return progr.plant_name!==remove;\n});\nflow.set(\"saved_programs\",result);\nmsg.payload=result;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 770,
-        "y": 2790,
+        "x": 737,
+        "y": 1520,
         "wires": [
             [
-                "d77615aa.e89d88",
-                "a073f53c.9df468"
+                "cf64b08.01e645",
+                "479379e8.766de8",
+                "184e743d.002a1c"
             ]
         ]
     },
     {
-        "id": "d77615aa.e89d88",
+        "id": "cf64b08.01e645",
         "type": "DataIn",
-        "z": "61da1d7d.518484",
-        "collection": "4faf0170.b836a",
+        "z": "d78cd966.d70638",
+        "collection": "b49eeed8.ce16f",
         "name": "",
         "update": false,
         "path": "/plants",
-        "x": 965,
-        "y": 2790,
+        "x": 734,
+        "y": 1463,
         "wires": []
     },
     {
-        "id": "4fd9f491.7b301c",
+        "id": "3ff3acf2.4c84c4",
         "type": "inject",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "on start",
         "topic": "",
         "payload": "",
@@ -1346,123 +1637,46 @@
         "crontab": "",
         "once": true,
         "onceDelay": "0.2",
-        "x": 210,
-        "y": 1140,
+        "x": 212,
+        "y": 1159,
         "wires": [
             [
-                "cdb39fc1.e13d1"
+                "898cc775.88e548"
             ]
         ]
     },
     {
-        "id": "cdb39fc1.e13d1",
+        "id": "898cc775.88e548",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "var current=flow.get(\"current_program\");\nvar plants=flow.get(\"saved_programs\");\n\nvar result=plants.filter((el)=>{\n    return el.plant_name===current;\n});\nflow.set(\"current\",result[0]);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 420,
-        "y": 1155,
+        "x": 411,
+        "y": 1159,
         "wires": [
-            [
-                "a073f53c.9df468"
-            ]
+            []
         ]
     },
     {
-        "id": "b4dfc630.27d8f8",
-        "type": "debug",
-        "z": "61da1d7d.518484",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 525,
-        "y": 1605,
-        "wires": []
-    },
-    {
-        "id": "e67f02b1.d30cc",
-        "type": "debug",
-        "z": "61da1d7d.518484",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 815,
-        "y": 1530,
-        "wires": []
-    },
-    {
-        "id": "464eb43d.b7f45c",
-        "type": "debug",
-        "z": "61da1d7d.518484",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 1210,
-        "y": 1395,
-        "wires": []
-    },
-    {
-        "id": "85949307.b4271",
-        "type": "function",
-        "z": "61da1d7d.518484",
-        "name": "",
-        "func": "msg.payload=flow.get(\"saved_programs\");\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 420,
-        "y": 1740,
-        "wires": [
-            [
-                "a073f53c.9df468",
-                "602f12d6.d79e2c"
-            ]
-        ]
-    },
-    {
-        "id": "602f12d6.d79e2c",
-        "type": "debug",
-        "z": "61da1d7d.518484",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 385,
-        "y": 1845,
-        "wires": []
-    },
-    {
-        "id": "45ef34d6.2bf95c",
+        "id": "fe05f496.42cc48",
         "type": "arduino out",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "pin": "12",
         "state": "OUTPUT",
-        "arduino": "118e97fc.26aff8",
-        "x": 1640,
-        "y": 2535,
+        "arduino": "f90f2d51.0088e",
+        "x": 2083,
+        "y": 2299,
         "wires": []
     },
     {
-        "id": "d7c6a4fa.b0dfa8",
+        "id": "c27cdc59.495e6",
         "type": "ui_chart",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
-        "group": "8f255546.c27868",
+        "group": "34a17f3.a286e8",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -1475,9 +1689,9 @@
         "dot": false,
         "ymin": "0",
         "ymax": "1000",
-        "removeOlder": "10",
+        "removeOlder": "6",
         "removeOlderPoints": "",
-        "removeOlderUnit": "60",
+        "removeOlderUnit": "3600",
         "cutout": 0,
         "useOneColor": false,
         "colors": [
@@ -1493,48 +1707,50 @@
         ],
         "useOldStyle": false,
         "outputs": 1,
-        "x": 725,
-        "y": 300,
+        "x": 734,
+        "y": 380,
         "wires": [
-            []
+            [
+                "aa97ecc4.60a1a"
+            ]
         ]
     },
     {
-        "id": "d279d4d2.8742b8",
+        "id": "b1dd191b.968298",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "msg.topic=\"Moisture\";\nmsg.label=\"Moisture\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 455,
-        "y": 225,
+        "x": 335,
+        "y": 380,
         "wires": [
             [
-                "d7c6a4fa.b0dfa8"
+                "c27cdc59.495e6"
             ]
         ]
     },
     {
-        "id": "3ccfa164.a7baae",
+        "id": "5a1b3254.1b829c",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "msg.topic=\"Watering\";\nvar water=flow.get(\"water\");\nmsg.payload=msg.payload*500;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 620,
-        "y": 375,
+        "x": 544,
+        "y": 437,
         "wires": [
             [
-                "d7c6a4fa.b0dfa8"
+                "c27cdc59.495e6"
             ]
         ]
     },
     {
-        "id": "1cd557ec.4625c8",
+        "id": "b86d36a7.9e62f8",
         "type": "schedex",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "suspended": false,
         "lat": "",
@@ -1556,35 +1772,66 @@
         "fri": true,
         "sat": true,
         "sun": true,
-        "x": 1135,
-        "y": 2535,
+        "x": 1654,
+        "y": 2299,
         "wires": [
             [
-                "888ab4a8.5a6638"
+                "23628d83.068e32"
             ]
         ]
     },
     {
-        "id": "888ab4a8.5a6638",
+        "id": "23628d83.068e32",
         "type": "function",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "func": "if(msg.payload===\"on\")\n{\n    msg.payload=1;\n    flow.set(\"lamp\",1);\n}\nelse \n{\n    msg.payload=0;\n    flow.set(\"lamp\",0);\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1400,
-        "y": 2535,
+        "x": 1919,
+        "y": 2299,
         "wires": [
             [
-                "45ef34d6.2bf95c",
-                "56f0e2c3.dd1b3c"
+                "fe05f496.42cc48"
             ]
         ]
     },
     {
-        "id": "c7bdfe6f.d69c1",
+        "id": "f8718dd3.a1ff6",
+        "type": "ui_text",
+        "z": "d78cd966.d70638",
+        "group": "38610e49.cdb392",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Now:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 1750,
+        "y": 2385,
+        "wires": []
+    },
+    {
+        "id": "5303a640.df65d8",
+        "type": "function",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "func": "var d = new Date();\nmsg.payload=d.toLocaleTimeString();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1598,
+        "y": 2385,
+        "wires": [
+            [
+                "f8718dd3.a1ff6"
+            ]
+        ]
+    },
+    {
+        "id": "458cc9de.b7e2f8",
         "type": "inject",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "topic": "",
         "payload": "",
@@ -1593,244 +1840,293 @@
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "x": 1375,
-        "y": 2790,
+        "x": 1428,
+        "y": 2385,
         "wires": [
             [
-                "91b5189b.a2de88"
+                "5303a640.df65d8"
             ]
         ]
     },
     {
-        "id": "91b5189b.a2de88",
-        "type": "function",
-        "z": "61da1d7d.518484",
+        "id": "aa97ecc4.60a1a",
+        "type": "json",
+        "z": "d78cd966.d70638",
         "name": "",
-        "func": "msg.payload=flow.get(\"lamp\");\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 1550,
-        "y": 2790,
+        "x": 886,
+        "y": 380,
+        "wires": [
+            [
+                "98130416.181c98"
+            ]
+        ]
+    },
+    {
+        "id": "98130416.181c98",
+        "type": "file",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "filename": "/tmp/chart.log",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "x": 1068,
+        "y": 380,
         "wires": [
             []
         ]
     },
     {
-        "id": "56f0e2c3.dd1b3c",
-        "type": "debug",
-        "z": "61da1d7d.518484",
+        "id": "7fbd383b.3db2d8",
+        "type": "file in",
+        "z": "d78cd966.d70638",
         "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 1440,
-        "y": 2655,
-        "wires": []
-    },
-    {
-        "id": "bcbe8fde.027cb",
-        "type": "ui_text",
-        "z": "61da1d7d.518484",
-        "group": "1eeedcbb.46d953",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "x": 1200,
-        "y": 2655,
-        "wires": []
-    },
-    {
-        "id": "646b928b.300b4c",
-        "type": "function",
-        "z": "61da1d7d.518484",
-        "name": "",
-        "func": "var d = new Date();\nmsg.payload=d.toLocaleTimeString();\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 1050,
-        "y": 2700,
+        "filename": "/tmp/chart.log",
+        "format": "utf8",
+        "sendError": true,
+        "x": 365,
+        "y": 513,
         "wires": [
             [
-                "bcbe8fde.027cb"
+                "63779fcd.1128a"
             ]
         ]
     },
     {
-        "id": "ea0b9fe5.7fa4c",
+        "id": "63779fcd.1128a",
+        "type": "json",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "x": 544,
+        "y": 513,
+        "wires": [
+            [
+                "c27cdc59.495e6"
+            ]
+        ]
+    },
+    {
+        "id": "aaa3e79c.cc6218",
         "type": "inject",
-        "z": "61da1d7d.518484",
+        "z": "d78cd966.d70638",
         "name": "",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "repeat": "1",
+        "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": 0.1,
-        "x": 895,
-        "y": 2685,
+        "onceDelay": "0.5",
+        "x": 132,
+        "y": 1829,
         "wires": [
             [
-                "646b928b.300b4c"
+                "8ee8b61f.6478f8",
+                "515c2a6b.8b8324"
             ]
         ]
     },
     {
-        "id": "c3adc197.07776",
-        "type": "ui_group",
-        "z": "",
-        "name": "Group 5",
-        "tab": "5ebe8898.522c38",
-        "order": 3,
-        "disp": true,
-        "width": "12",
-        "collapse": false
+        "id": "aafbf958.45ad08",
+        "type": "function",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1817,
+        "y": 2052,
+        "wires": [
+            [
+                "f67bc4b3.87a268"
+            ]
+        ]
     },
     {
-        "id": "ce607c77.3a086",
-        "type": "ui_group",
-        "z": "",
-        "name": "Add new configuration",
-        "tab": "d512fc44.fed77",
+        "id": "479379e8.766de8",
+        "type": "function",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1646,
+        "y": 1520,
+        "wires": [
+            [
+                "aafbf958.45ad08"
+            ]
+        ]
+    },
+    {
+        "id": "f67bc4b3.87a268",
+        "type": "function",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 183,
+        "y": 2128,
+        "wires": [
+            [
+                "8ee8b61f.6478f8"
+            ]
+        ]
+    },
+    {
+        "id": "5953f436.8611ec",
+        "type": "function",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 183,
+        "y": 2318,
+        "wires": [
+            [
+                "e7237dd1.cdbe5"
+            ]
+        ]
+    },
+    {
+        "id": "f1f55e3e.caa32",
+        "type": "comment",
+        "z": "d78cd966.d70638",
+        "name": "delete program",
+        "info": "",
+        "x": 80,
+        "y": 1482,
+        "wires": []
+    },
+    {
+        "id": "a52cbc38.e3bb7",
+        "type": "ui_form",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "label": "",
+        "group": "c2798c06.6d25b",
         "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
+        "width": "0",
+        "height": "0",
+        "options": [
+            {
+                "label": "Plant name",
+                "value": "name",
+                "type": "text",
+                "required": true
+            }
+        ],
+        "formValue": {
+            "name": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "",
+        "x": 174,
+        "y": 1519,
+        "wires": [
+            [
+                "a6db3ba0.0d5a58"
+            ]
+        ]
     },
     {
-        "id": "ec9c9342.c86e2",
-        "type": "ui_group",
-        "z": "",
-        "name": "Current configuration",
-        "tab": "f576c5a6.13db78",
+        "id": "184e743d.002a1c",
+        "type": "function",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "func": "var result=[];\nvar programs= flow.get(\"saved_programs\");\nif(programs===null){\n    return null;\n}\n\nprograms.forEach((program)=>{\n    result.push(program.plant_name);\n});\n\nvar html=\"\";\nresult.forEach((el)=>{\n   html= html+ \"<p>\"+el+\"</p>\";\n});\nmsg.payload=html;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 670,
+        "y": 1674,
+        "wires": [
+            [
+                "eedb1f8f.7394e",
+                "614caf6e.b9127"
+            ]
+        ]
+    },
+    {
+        "id": "b36c3372.491fd",
+        "type": "inject",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.3",
+        "x": 287,
+        "y": 1674,
+        "wires": [
+            [
+                "184e743d.002a1c"
+            ]
+        ]
+    },
+    {
+        "id": "eedb1f8f.7394e",
+        "type": "ui_template",
+        "z": "d78cd966.d70638",
+        "group": "87664306.1716b",
+        "name": "",
         "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
+        "width": "0",
+        "height": "0",
+        "format": "<div ng-bind-html=\"msg.payload\" style=\"height:fit-content;'\">{{msg.payload}}</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 866,
+        "y": 1612,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "35557d8f.194112",
-        "type": "ui_group",
-        "z": "",
-        "name": "Options",
-        "tab": "f576c5a6.13db78",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "4faf0170.b836a",
-        "type": "json-db-collection",
-        "z": "",
-        "name": "PlantConfig",
-        "collection": "PlantConfig",
-        "save": true
-    },
-    {
-        "id": "af408a37.e5f5c8",
-        "type": "ui_group",
-        "z": "",
-        "name": "Default",
-        "tab": "5ebe8898.522c38",
+        "id": "614caf6e.b9127",
+        "type": "ui_template",
+        "z": "d78cd966.d70638",
+        "group": "eb0cde59.c1cc",
+        "name": "",
         "order": 1,
-        "disp": true,
-        "width": "12",
-        "collapse": false
+        "width": "0",
+        "height": "0",
+        "format": "<div ng-bind-html=\"msg.payload\" style=\"height:fit-content;'\">{{msg.payload}}</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 866,
+        "y": 1674,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "118e97fc.26aff8",
-        "type": "arduino-board",
-        "z": "",
-        "device": "/dev/ttyUSB0"
-    },
-    {
-        "id": "1eeedcbb.46d953",
-        "type": "ui_group",
-        "z": "",
-        "name": "Change current configuration",
-        "tab": "d875d7fe.275278",
-        "order": 1,
-        "disp": true,
-        "width": "12",
-        "collapse": false
-    },
-    {
-        "id": "f6eb4df1.0d706",
-        "type": "ui_group",
-        "z": "",
-        "name": "Group 1",
-        "tab": "c11fa87d.4cbc98",
-        "order": 1,
-        "disp": false,
-        "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "8f255546.c27868",
-        "type": "ui_group",
-        "z": "",
-        "name": "Group 4",
-        "tab": "5ebe8898.522c38",
-        "order": 2,
-        "disp": true,
-        "width": "12",
-        "collapse": false
-    },
-    {
-        "id": "5ebe8898.522c38",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Home",
-        "icon": "fa-home",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "d512fc44.fed77",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Add new configuration",
-        "icon": "fa-plus",
-        "order": 4,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "f576c5a6.13db78",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Current configuration",
-        "icon": "fa-hand-o-right",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "d875d7fe.275278",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Change current configuration",
-        "icon": "fa-pencil",
-        "order": 3,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "c11fa87d.4cbc98",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Remove program",
-        "icon": "fa-times",
-        "order": 5,
-        "disabled": false,
-        "hidden": false
+        "id": "165c5b48.dfe485",
+        "type": "inject",
+        "z": "d78cd966.d70638",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 162,
+        "y": 513,
+        "wires": [
+            [
+                "7fbd383b.3db2d8",
+                "1bac87f5.016298"
+            ]
+        ]
     }
 ]
